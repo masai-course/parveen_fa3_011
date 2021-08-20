@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/eventDetail">
+
+    <fragment
+        android:id="@+id/eventDetail"
+        android:name="com.example.navifragyou.EventDetail"
+        android:label="fragment_event_detail"
+        tools:layout="@layout/fragment_event_detail" >
+        <action
+            android:id="@+id/action_eventDetail_to_dateandTime"
+            app:destination="@id/dateandTime" />
+    </fragment>
+    <fragment
+        android:id="@+id/dateandTime"
+        android:name="com.example.navifragyou.DateandTime"
+        android:label="fragment_dateand_time"
+        tools:layout="@layout/fragment_dateand_time" >
+        <action
+            android:id="@+id/action_dateandTime_to_priceDetail"
+            app:destination="@id/priceDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/priceDetail"
+        android:name="com.example.navifragyou.PriceDetail"
+        android:label="fragment_price_detail"
+        tools:layout="@layout/fragment_price_detail" />
+</navigation>
