@@ -5,9 +5,6 @@ import retrofit2.http.Query
 
 interface ApiClient {
 
-    @GET("users")
-    fun getposts(@Query("postId")postId:Int):retrofit2.Call<ResponseModel>
-
-
-
+    @GET("api/users")
+    fun getposts(@Query("users")postId:Int):retrofit2.Call<ResponseModel>
 }

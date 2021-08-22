@@ -29,7 +29,7 @@ class DetailFrag : Fragment(R.layout.fragment_detail ) {
             }
 
             override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
-
+            Toast.makeText(context,"failed",Toast.LENGTH_SHORT).show()
             }
 
         })
