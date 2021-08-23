@@ -1,15 +1,17 @@
 package com.example.u3eval2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.item_layout.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),Clicklistener {
 
     private lateinit var responseModel: ResponseModel
 
@@ -35,9 +37,18 @@ class MainActivity : AppCompatActivity() {
         })
     }
     private fun setrecyclerview(){
-        val songadapter=SongAdapter(responseModel)
+        val songadapter=SongAdapter(responseModel,this)
         val linearLayoutManager=LinearLayoutManager(this)
         recycler.adapter=songadapter
         recycler.layoutManager=linearLayoutManager
+    }
+
+    override fun onclicked(position: Int, responseModel: Result) {
+        val intent=Intent(this,MusicActivity::class.java)
+        intent.putExtra("image",ivimage.toString().toInt())
+        intent.putExtra("name",tvtrack.text.toString())
+        intent.putExtra("artist",tvartist.text.toString())
+        intent.putExtra("collection",tvcollection.text.toString())
+        startActivity(intent)
     }
 }

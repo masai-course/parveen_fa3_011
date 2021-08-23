@@ -15,7 +15,7 @@ class SongViewHolder(private val view:View,val clicklistener: Clicklistener):Rec
             tvartist.text=datalist.artistName
             tvcollection.text=datalist.collectionName
             rela.setOnClickListener {
-                clicklistener.onclicked(adapterPosition,ResponseModel)
+                clicklistener.onclicked(adapterPosition,datalist)
             }
         }
     }
