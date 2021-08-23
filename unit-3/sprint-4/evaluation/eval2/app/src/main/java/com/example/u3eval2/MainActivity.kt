@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity(),Clicklistener {
 
     override fun onclicked(position: Int, responseModel: Result) {
         val intent=Intent(this,MusicActivity::class.java)
-        intent.putExtra("image",ivimage.toString().toInt())
+
         intent.putExtra("name",tvtrack.text.toString())
         intent.putExtra("artist",tvartist.text.toString())
         intent.putExtra("collection",tvcollection.text.toString())
