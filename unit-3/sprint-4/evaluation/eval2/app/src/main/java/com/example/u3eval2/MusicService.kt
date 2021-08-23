@@ -35,7 +35,7 @@ class MusicService : Service() {
 
     override fun onDestroy() {
         super.onDestroy()
-        mediaPlayer.stop()
+        mediaPlayer.pause()
     }
 
     override fun onBind(intent: Intent?): IBinder? {
