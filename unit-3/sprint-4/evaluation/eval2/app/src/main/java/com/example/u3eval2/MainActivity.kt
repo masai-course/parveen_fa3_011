@@ -16,12 +16,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        btnSearch.setOnClickListener {
+            ApiCall()
+        }
     }
     fun ApiCall(){
         val apiClient=Network.getretrofitinstance().create(ApiClient::class.java)
         apiClient.posts(etname.text.toString()).enqueue(object :Callback<ResponseModel>{
             override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {
                 responseModel=response.body()!!
+                setrecyclerview()
             }
 
             override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
@@ -33,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     private fun setrecyclerview(){
         val songadapter=SongAdapter(responseModel)
         val linearLayoutManager=LinearLayoutManager(this)
-
+        recycler.adapter=songadapter
+        recycler.layoutManager=linearLayoutManager
     }
 }
