@@ -1,5 +1,6 @@
 package com.example.scopefunyou
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -14,7 +15,12 @@ import retrofit2.Response
 class DetailFrag : Fragment(R.layout.fragment_detail ) {
 
      private lateinit var responseModel:ResponseModel
+     interface itemclicklistener:itemclickListener
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -36,7 +42,7 @@ class DetailFrag : Fragment(R.layout.fragment_detail ) {
     }
     private fun setRecyclerview(){
 
-        val postAdapter=PostAdapter(responseModel)
+        val postAdapter=PostAdapter(responseModel,context)
         val linearLayoutManager= LinearLayoutManager(context)
         recycle.adapter=postAdapter
         recycle.layoutManager=linearLayoutManager
@@ -44,4 +50,7 @@ class DetailFrag : Fragment(R.layout.fragment_detail ) {
 
 
 
+
 }
+
+
