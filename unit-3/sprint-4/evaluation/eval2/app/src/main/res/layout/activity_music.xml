@@ -4,9 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MusicActivity">
     <ImageView
-        android:layout_width=""
-        android:layout_height=""
+        android:id="@+id/imgact"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:scaleType="fitXY"/>
+    <TextView
+        android:id="@+id/tvtrack1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="fdjdsk"
+        android:layout_margin="15dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/tvartist1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="fdjdsk"
+        android:layout_margin="15dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/tvcollection1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="fdjdsk"
+        android:layout_margin="15dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+    <Button
+        android:id="@+id/btnPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PLAY"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:id="@+id/btnPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pause"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"/>
 
 </LinearLayout>

@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_layout.view.*
 
-class SongViewHolder(private val view:View):RecyclerView.ViewHolder(view) {
+class SongViewHolder(private val view:View,val clicklistener: Clicklistener):RecyclerView.ViewHolder(view) {
 
 
     fun setdata(datalist:Result){
@@ -14,6 +14,9 @@ class SongViewHolder(private val view:View):RecyclerView.ViewHolder(view) {
             tvtrack.text=datalist.trackName
             tvartist.text=datalist.artistName
             tvcollection.text=datalist.collectionName
+            rela.setOnClickListener {
+                clicklistener.onclicked(adapterPosition,ResponseModel)
+            }
         }
     }
 }
