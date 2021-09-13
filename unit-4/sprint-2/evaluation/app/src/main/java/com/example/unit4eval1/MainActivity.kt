@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
        }
         btnsearch.setOnClickListener {
          val intent=Intent(this,SearchItem::class.java)
+            startActivity(intent)
         }
     }
 
