@@ -19,23 +19,24 @@ class MainActivity : AppCompatActivity() {
         fragmentManager=supportFragmentManager
 
        btnadd.setOnClickListener {
-
+additemfrag(AddItemFragment())
 
        }
         btnsearch.setOnClickListener {
 
         }
     }
-    fun additemfrag(){
-        val transaction=fragmentManager.beginTransaction()
+    fun additemfrag(addItemFragment: AddItemFragment){
+        val transaction:FragmentTransaction=fragmentManager.beginTransaction()
         val fragmentadd=AddItemFragment
-        transaction.add(R.id.linear, fragmentadd, "fragmentadd").commit()
+        transaction.add(R.id.linear,fragmentadd,"frag")
+        transaction.commit()
 
     }
-    fun addsearchfrag(){
-        val transaction=fragmentManager.beginTransaction()
+    fun addsearchfrag(searchitemFragment: SearchitemFragment){
+        var transaction=fragmentManager.beginTransaction()
         val fragmentsearch=SearchitemFragment
-            FragmentTransaction.add(R.id.linear,fragmentsearch,"search").commit()
+           transaction.replace()
 
     }
 }
