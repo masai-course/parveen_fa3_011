@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Unit4Eval1">
         <activity
+            android:name=".SearchItem"
+            android:exported="true" />
+        <activity
+            android:name=".AddItem"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

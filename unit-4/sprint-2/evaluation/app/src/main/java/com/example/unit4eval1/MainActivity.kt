@@ -1,5 +1,6 @@
 package com.example.unit4eval1
 
+import android.content.Intent
 import android.graphics.Insets.add
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,24 +20,13 @@ class MainActivity : AppCompatActivity() {
         fragmentManager=supportFragmentManager
 
        btnadd.setOnClickListener {
-additemfrag(AddItemFragment())
-
+          val intent=Intent(this,AddItem::class.java)
+           startActivity(intent)
        }
         btnsearch.setOnClickListener {
-
+         val intent=Intent(this,SearchItem::class.java)
         }
     }
-    fun additemfrag(addItemFragment: AddItemFragment){
-        val transaction:FragmentTransaction=fragmentManager.beginTransaction()
-        val fragmentadd=AddItemFragment
-        transaction.add(R.id.linear,fragmentadd,"frag")
-        transaction.commit()
 
-    }
-    fun addsearchfrag(searchitemFragment: SearchitemFragment){
-        var transaction=fragmentManager.beginTransaction()
-        val fragmentsearch=SearchitemFragment
-           transaction.replace()
-
-    }
 }
+
