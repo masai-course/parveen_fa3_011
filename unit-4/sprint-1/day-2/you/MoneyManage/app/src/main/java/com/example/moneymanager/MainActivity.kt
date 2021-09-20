@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -22,23 +23,10 @@ class MainActivity : AppCompatActivity(),onItemClicked {
         setContentView(R.layout.activity_main)
 
         fab.setOnClickListener {
-            dbhandler.insertTask("Title","Date","Amount")
-            updateUI()
-
+            val intent= Intent(this,EditActivity::class.java)
+            startActivityForResult(intent,0)
         }
-       /* if(intent!=null&& intent.extras!=null) {
-            val intent = intent
-            val Title = intent.getStringExtra("title").toString()
-            val amount = intent.getStringExtra("amount").toString()
-            val currentDate: String =
-                SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
-            val model = Model()
-            model.title = Title
-            model.Amount = amount
-            model.date = currentDate
 
-            dbhandler.editTask(model)
-            updateUI()*/
 
        modelList.addAll(dbhandler.getalltasks())
 
@@ -54,12 +42,7 @@ class MainActivity : AppCompatActivity(),onItemClicked {
                 val Title = data?.getStringExtra("title").toString()
                 val amount = data?.getStringExtra("amount").toString()
                 val currentDate: String = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
-                val model=Model()
-                model.title=Title
-                model.Amount=amount
-                model.date=currentDate
-
-                dbhandler.editTask(model)
+                dbhandler.insertTask("$Title","$currentDate","$amount")
                 updateUI()
                 Log.d("praveen", "onActivityResult")
             }
@@ -70,8 +53,25 @@ class MainActivity : AppCompatActivity(),onItemClicked {
 
 
     override fun onEditClicked(model: Model) {
-       val intent= Intent(this,EditActivity::class.java)
-        startActivityForResult(intent,0)
+      card.visibility=View.VISIBLE
+
+        mbtnetsave.setOnClickListener {
+
+
+            val title = etedit1.text.toString()
+            val amt = etedit2.text.toString()
+            val currentDate: String =
+                SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
+            model.title = title
+            model.Amount = amt
+            model.date = currentDate
+
+            dbhandler.editTask(model)
+            card.visibility=View.GONE
+
+            updateUI()
+        }
+
 
     }
 
