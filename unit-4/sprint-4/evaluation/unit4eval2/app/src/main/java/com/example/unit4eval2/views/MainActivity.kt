@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity(), onAddclicked {
         val apiclient= Network.getinstance().create(ApiService::class.java)
         apiclient.posts("pizzas").enqueue(object :Callback<PizzaModel>{
             override fun onResponse(call: Call<PizzaModel>, response: Response<PizzaModel>) {
-              pizasize=response?.body()!!
                 setrecycler()
             }
 
@@ -50,6 +49,6 @@ class MainActivity : AppCompatActivity(), onAddclicked {
 
 
     override fun onitemClicked(position: Int, pizamodel: PizzaModel) {
-        TODO("Not yet implemented")
+
     }
 }
