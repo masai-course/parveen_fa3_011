@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.unit4eval2.views.remote.response.PizzaModel
 
-@Database(entities = [PizzaModel::class],version = 1)
+@Database(entities = [Model::class],version = 1)
 abstract class pizzaDatabase:RoomDatabase() {
 
     companion object{

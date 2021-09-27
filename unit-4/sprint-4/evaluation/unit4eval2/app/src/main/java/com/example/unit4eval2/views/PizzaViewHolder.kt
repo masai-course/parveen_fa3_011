@@ -29,7 +29,7 @@ class PizzaViewHolder(private val view: View,val clicklistener:onAddclicked):Rec
         view.apply {
             tvname.text = pizalist.name
             tvdisc.text = pizalist.description
-            tvprice.text = pizalist2.price.toString()
+            tvprice.text = pizalist.crusts[0].sizes[0].price.toString()
             mbtnadd.setOnClickListener {
                 clicklistener.onitemClicked(adapterPosition, pizalist)
             }

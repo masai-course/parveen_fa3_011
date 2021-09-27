@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity(), onAddclicked {
         val apiclient= Network.getinstance().create(ApiService::class.java)
         apiclient.posts("pizzas").enqueue(object :Callback<PizzaModel>{
             override fun onResponse(call: Call<PizzaModel>, response: Response<PizzaModel>) {
+                
                 setrecycler()
             }
 
