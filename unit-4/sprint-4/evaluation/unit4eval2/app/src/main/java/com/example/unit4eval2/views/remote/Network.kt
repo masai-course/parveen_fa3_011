@@ -1,4 +1,4 @@
-package com.example.unit4eval2.views
+package com.example.unit4eval2.views.remote
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

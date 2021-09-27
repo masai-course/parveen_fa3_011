@@ -1,7 +1,7 @@
 package com.example.unit4eval2.views
 
-import java.text.FieldPosition
+import com.example.unit4eval2.views.remote.response.PizzaModel
 
 interface onAddclicked {
-    fun onitemClicked(position:Int, pizamodel:PizzaModel)
+    fun onitemClicked(position:Int, pizamodel: PizzaModel)
 }

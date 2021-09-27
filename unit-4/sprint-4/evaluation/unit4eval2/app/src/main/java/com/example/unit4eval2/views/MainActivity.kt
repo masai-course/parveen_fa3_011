@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.unit4eval2.R
+import com.example.unit4eval2.views.remote.ApiService
+import com.example.unit4eval2.views.remote.Network
+import com.example.unit4eval2.views.remote.response.PizzaModel
+import com.example.unit4eval2.views.remote.response.Size
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -22,7 +26,7 @@ class MainActivity : AppCompatActivity(), onAddclicked {
 
     }
     fun ApiCall(){
-        val apiclient=Network.getinstance().create(ApiService::class.java)
+        val apiclient= Network.getinstance().create(ApiService::class.java)
         apiclient.posts("pizzas").enqueue(object :Callback<PizzaModel>{
             override fun onResponse(call: Call<PizzaModel>, response: Response<PizzaModel>) {
               pizasize=response?.body()!!

@@ -5,6 +5,8 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.unit4eval2.R
+import com.example.unit4eval2.views.remote.response.PizzaModel
+import com.example.unit4eval2.views.remote.response.Size
 
 class PizzaViewHolder(private val view: View,val clicklistener:onAddclicked):RecyclerView.ViewHolder(view) {
 
@@ -23,7 +25,7 @@ class PizzaViewHolder(private val view: View,val clicklistener:onAddclicked):Rec
 
     }
 
-    fun setdata(pizalist: PizzaModel, pizalist2:Size){
+    fun setdata(pizalist: PizzaModel, pizalist2: Size){
         view.apply {
             tvname.text = pizalist.name
             tvdisc.text = pizalist.description
