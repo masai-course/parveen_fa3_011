@@ -18,8 +18,7 @@ class Fragment1 : Fragment(R.layout.fragment_1) {
 
         btn1.setOnClickListener {
             indata.frag1get()
-            val intent=Intent(activity,MainActivity::class.java)
-            startActivity(intent)
+
         }
     }
 }

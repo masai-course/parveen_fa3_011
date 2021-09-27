@@ -17,8 +17,7 @@ class Fragment2 : Fragment(R.layout.fragment_2) {
 
         btn2.setOnClickListener {
             incrdata.frag2get()
-            val intent= Intent(activity,MainActivity::class.java)
-            startActivity(intent)
+
         }
     }
 

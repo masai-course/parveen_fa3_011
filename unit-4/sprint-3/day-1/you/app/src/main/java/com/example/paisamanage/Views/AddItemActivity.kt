@@ -1,8 +1,9 @@
-package com.example.paisamanage
+package com.example.paisamanage.Views
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.paisamanage.R
 import kotlinx.android.synthetic.main.activity_add_item.*
 
 class AddItemActivity : AppCompatActivity() {

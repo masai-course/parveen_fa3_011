@@ -1,4 +1,4 @@
-package com.example.paisamanage
+package com.example.paisamanage.Views
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.paisamanage.R
+import com.example.paisamanage.models.local.Model
 
-class MoneyAdapter(val context: Context, val modelList: MutableList<Model>, val listener:onItemClicked) : RecyclerView.Adapter<MoneyAdapter.TaskViewHolder>() {
+class MoneyAdapter(val context: Context, val modelList: MutableList<Model>, val listener: onItemClicked) : RecyclerView.Adapter<MoneyAdapter.TaskViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         val inflater = LayoutInflater.from(context)

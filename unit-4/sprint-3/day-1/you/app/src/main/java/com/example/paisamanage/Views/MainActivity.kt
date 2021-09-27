@@ -1,12 +1,20 @@
-package com.example.paisamanage
+package com.example.paisamanage.Views
 
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.paisamanage.R
+import com.example.paisamanage.Repository.MoneyRepo
+import com.example.paisamanage.ViewModel.Viewmodel
+import com.example.paisamanage.ViewModel.viewmodelFactory
+import com.example.paisamanage.models.local.Model
+import com.example.paisamanage.models.local.MoneyDAO
+import com.example.paisamanage.models.local.manageRoomDatabase
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_layout.*
 import kotlinx.coroutines.CoroutineScope
@@ -15,19 +23,25 @@ import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
-class MainActivity : AppCompatActivity(),onItemClicked {
+class MainActivity : AppCompatActivity(), onItemClicked {
 
     lateinit var moneyAdapter: MoneyAdapter
     private val moneylist = mutableListOf<Model>()
     lateinit var moneyDAO: MoneyDAO
     lateinit var datadb: manageRoomDatabase
     val model = Model("", "", "", 0, 0)
+    lateinit var viewmodel: ViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         datadb = manageRoomDatabase.getdatabaseObject(this)
         moneyDAO = datadb.gettaskDao()
+
+        val repo= MoneyRepo(moneyDAO)
+        val viewmodelfactory=viewmodelFactory(repo)
+        viewmodel= ViewModelProviders.of(this,viewmodelfactory).get(Viewmodel::class.java)
 
         fab.setOnClickListener {
             val intent = Intent(this, AddItemActivity::class.java)
@@ -41,13 +55,15 @@ class MainActivity : AppCompatActivity(),onItemClicked {
         Recucler.layoutManager = LinearLayoutManager(this)
         Recucler.adapter = moneyAdapter
 
-        moneyDAO.getTasks().observe(this, androidx.lifecycle.Observer {
+        moneyDAO.gettasks().observe(this, androidx.lifecycle.Observer {
             val task = it
             moneylist.clear()
             moneylist.addAll(task)
             moneyAdapter.notifyDataSetChanged()
 
         })
+        (viewmodel as Viewmodel).gettaskAPI()
+
 
 
     }
@@ -75,7 +91,7 @@ class MainActivity : AppCompatActivity(),onItemClicked {
                 }
                 val newtask = Model(Title, type, currentDate, amount, bal)
                 CoroutineScope(Dispatchers.IO).launch {
-                    moneyDAO.addTasks(newtask)
+                    moneyDAO.addtasks(newtask)
                 }
 
 

@@ -23,13 +23,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-       <LinearLayout
+       <fragment
+           android:name="com.example.livedata.Fragment1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
             android:id="@+id/vfrag1"
         android:layout_weight="4.5"
            android:orientation="vertical" />
-        <LinearLayout
+        <fragment
+            android:name="com.example.livedata.Fragment2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/vfrag2"

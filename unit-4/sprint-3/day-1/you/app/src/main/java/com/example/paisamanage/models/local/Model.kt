@@ -1,4 +1,4 @@
-package com.example.paisamanage
+package com.example.paisamanage.models.local
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

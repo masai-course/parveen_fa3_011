@@ -12,8 +12,7 @@ import kotlin.coroutines.CoroutineContext
 class MainActivity : AppCompatActivity() {
 
      val daata=DataKaxz()
-    lateinit var frag1:FragmentManager
-    lateinit var fragmentManager: FragmentManager
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,12 +32,6 @@ class MainActivity : AppCompatActivity() {
             txtview.text=data2
         })
 
-            frag1=supportFragmentManager
-            frag1.beginTransaction().add(R.id.vfrag1,Fragment1()).commit()
-
-            fragmentManager=supportFragmentManager
-           val tra= fragmentManager.beginTransaction().add(R.id.vfrag2,Fragment2())
-        tra.commit()
 
 
     }
