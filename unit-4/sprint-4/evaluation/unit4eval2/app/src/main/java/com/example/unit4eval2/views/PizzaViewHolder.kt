@@ -20,11 +20,17 @@ class PizzaViewHolder(private val view: View,val clicklistener:onAddclicked):Rec
         mbtnadd=view.findViewById(R.id.btnaddCart)
 
 
+
     }
 
     fun setdata(pizalist: PizzaModel, pizalist2:Size){
-    tvname.text=pizalist.name
-        tvdisc.text=pizalist.description
-        tvprice.text= pizalist2.price.toString()
+        view.apply {
+            tvname.text = pizalist.name
+            tvdisc.text = pizalist.description
+            tvprice.text = pizalist2.price.toString()
+            mbtnadd.setOnClickListener {
+                clicklistener.onitemClicked(adapterPosition, pizalist)
+            }
+        }
     }
 }

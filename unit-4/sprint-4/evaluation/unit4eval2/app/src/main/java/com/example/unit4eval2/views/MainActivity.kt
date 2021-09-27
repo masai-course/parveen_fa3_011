@@ -11,7 +11,7 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity(), onAddclicked {
 
-    private lateinit var pizamodel:PizzaModel
+    private lateinit var pizamodel:List<PizzaModel>
     private lateinit var pizasize:List<Size>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity(), onAddclicked {
 
 
 
-    override fun onitemClicked(pizamodel: PizzaModel) {
+    override fun onitemClicked(position: Int, pizamodel: PizzaModel) {
         TODO("Not yet implemented")
     }
 }

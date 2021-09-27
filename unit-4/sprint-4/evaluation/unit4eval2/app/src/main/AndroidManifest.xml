@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Unit4eval2">
         <activity
+            android:name=".views.CartActivity"
+            android:exported="true" />
+        <activity
             android:name=".views.MainActivity"
             android:exported="true">
             <intent-filter>
