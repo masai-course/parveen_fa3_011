@@ -5,21 +5,23 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.unit4eval2.R
 
-class PizzaAdapter(val pizzalist:PizzaModel):RecyclerView.Adapter<PizzaViewHolder>() {
+class PizzaAdapter(val pizzalist:List<PizzaModel>,val pizzalist2:List<Size>,val clicklistener:onAddclicked):RecyclerView.Adapter<PizzaViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PizzaViewHolder {
       val view=LayoutInflater.from(parent.context).inflate(R.layout.item_layout,parent,false)
-      return PizzaViewHolder(view)
+      return PizzaViewHolder(view,clicklistener)
     }
 
     override fun onBindViewHolder(holder: PizzaViewHolder, position: Int) {
         val pizamodel=pizzalist[position]
+        val pizamodel2=pizzalist2[position]
+        holder.setdata(pizamodel,pizamodel2)
 
 
     }
 
     override fun getItemCount(): Int {
-        return pizzalist.crusts.size
+        return pizzalist.size
     }
 }

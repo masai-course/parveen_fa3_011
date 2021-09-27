@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.unit4eval2.R
 
-class PizzaViewHolder(private val view: View):RecyclerView.ViewHolder(view) {
+class PizzaViewHolder(private val view: View,val clicklistener:onAddclicked):RecyclerView.ViewHolder(view) {
 
     var tvname:TextView
     var tvdisc:TextView
@@ -22,9 +22,9 @@ class PizzaViewHolder(private val view: View):RecyclerView.ViewHolder(view) {
 
     }
 
-    fun setdata(pizalist:PizzaModel){
+    fun setdata(pizalist:PizzaModel,pizalist2:Size){
     tvname.text=pizalist.name
         tvdisc.text=pizalist.description
-        tvprice.text=pizalist.crusts
+        tvprice.text= pizalist2.price.toString()
     }
 }
