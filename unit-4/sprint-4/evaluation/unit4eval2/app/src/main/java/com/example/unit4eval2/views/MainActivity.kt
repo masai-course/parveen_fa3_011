@@ -11,21 +11,22 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity(), onAddclicked {
 
-    private lateinit var pizamodel:List<PizzaModel>
+    private lateinit var pizamodel:PizzaModel
     private lateinit var pizasize:List<Size>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
 
-
+       ApiCall()
 
     }
     fun ApiCall(){
         val apiclient=Network.getinstance().create(ApiService::class.java)
         apiclient.posts("pizzas").enqueue(object :Callback<PizzaModel>{
             override fun onResponse(call: Call<PizzaModel>, response: Response<PizzaModel>) {
-              pizamodel=response?.body()
+              pizasize=response?.body()!!
+                setrecycler()
             }
 
             override fun onFailure(call: Call<PizzaModel>, t: Throwable) {
@@ -42,7 +43,9 @@ class MainActivity : AppCompatActivity(), onAddclicked {
         Recycler.layoutManager=layoutManager
     }
 
-    override fun onitemClicked(position: Int, pizamodel: PizzaModel) {
+
+
+    override fun onitemClicked(pizamodel: PizzaModel) {
         TODO("Not yet implemented")
     }
 }

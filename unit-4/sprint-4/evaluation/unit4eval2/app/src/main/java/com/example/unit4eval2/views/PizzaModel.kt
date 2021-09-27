@@ -5,5 +5,6 @@ data class PizzaModel(
     val defaultCrust: Int,
     val description: String,
     val isVeg: Boolean,
-    val name: String
+    val name: String,
+    val getsize:List<Size>
 )

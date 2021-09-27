@@ -22,7 +22,7 @@ class PizzaViewHolder(private val view: View,val clicklistener:onAddclicked):Rec
 
     }
 
-    fun setdata(pizalist:PizzaModel,pizalist2:Size){
+    fun setdata(pizalist: PizzaModel, pizalist2:Size){
     tvname.text=pizalist.name
         tvdisc.text=pizalist.description
         tvprice.text= pizalist2.price.toString()
