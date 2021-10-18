@@ -8,14 +8,14 @@ import com.example.unit5eval1.data.ResponseModel
 import com.example.unit5eval1.data.ResponseModelItem
 import retrofit2.Call
 
-class paggingSourc:PagingSource<Int,ResponseModel>() {
+class paggingSourc:PagingSource<Int,ResponseModelItem>() {
 
     private val apical=Network.getApi()
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ResponseModel> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ResponseModelItem> {
         val pgno=params.key ?:1
         val responseModel: Call<ResponseModel> =apical.getposts(pgno)
-        val datalist= ArrayList<ResponseModel>()
+        val datalist= ArrayList<ResponseModelItem>()
 
         return try {
             LoadResult.Page(
@@ -28,7 +28,7 @@ class paggingSourc:PagingSource<Int,ResponseModel>() {
         }
     }
 
-    override fun getRefreshKey(state: PagingState<Int, ResponseModel>): Int? {
+    override fun getRefreshKey(state: PagingState<Int, ResponseModelItem>): Int? {
         return state.anchorPosition
     }
 }
