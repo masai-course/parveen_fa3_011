@@ -1,5 +1,6 @@
-package com.example.unit5eval1
+package com.example.unit5eval1.viewModel
 
+import com.example.unit5eval1.views.ApiService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -11,6 +12,6 @@ object Network {
             .addConverterFactory(GsonConverterFactory.create()).client(OkHttpClient()).build()
     }
 
-    fun getApi():ApiService= getinstance().create(ApiService::class.java)
+    fun getApi(): ApiService = getinstance().create(ApiService::class.java)
 
 }

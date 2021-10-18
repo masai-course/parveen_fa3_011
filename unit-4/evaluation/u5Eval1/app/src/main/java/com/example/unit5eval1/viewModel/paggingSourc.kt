@@ -1,16 +1,13 @@
 package com.example.unit5eval1.viewModel
 
-import android.icu.text.Transliterator
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.example.unit5eval1.Network
 import com.example.unit5eval1.data.ResponseModel
 import com.example.unit5eval1.data.ResponseModelItem
-import retrofit2.Call
 
 class paggingSourc:PagingSource<Int,ResponseModelItem>() {
 
-    private val apical=Network.getApi()
+    private val apical= Network.getApi()
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ResponseModelItem> {
         val pgno=params.key ?:1

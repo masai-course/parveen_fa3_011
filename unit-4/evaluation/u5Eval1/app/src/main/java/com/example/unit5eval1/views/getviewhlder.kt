@@ -1,10 +1,10 @@
-package com.example.unit5eval1
+package com.example.unit5eval1.views
 
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.unit5eval1.data.ResponseModel
+import com.example.unit5eval1.R
 import com.example.unit5eval1.data.ResponseModelItem
 import com.squareup.picasso.Picasso
 

@@ -1,4 +1,4 @@
-package com.example.unit5eval1
+package com.example.unit5eval1.views
 
 import com.example.unit5eval1.data.ResponseModel
 import com.example.unit5eval1.data.ResponseModelItem

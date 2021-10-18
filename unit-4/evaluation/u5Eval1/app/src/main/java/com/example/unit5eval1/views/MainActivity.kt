@@ -1,11 +1,11 @@
-package com.example.unit5eval1
+package com.example.unit5eval1.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.unit5eval1.data.ResponseModel
+import com.example.unit5eval1.R
 import com.example.unit5eval1.viewModel.imgViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.Main
