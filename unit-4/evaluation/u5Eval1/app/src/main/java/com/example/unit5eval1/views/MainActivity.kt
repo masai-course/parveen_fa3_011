@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.unit5eval1.R
+import com.example.unit5eval1.data.ResponseModel
 import com.example.unit5eval1.viewModel.imgViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.Main
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewmodell: imgViewModel
     private lateinit var imgAdapter: imgAdapter
     private lateinit var recycler:RecyclerView
+    private val res=ResponseModel()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
