@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:id="@+id/cardvieww">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/lin1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvname"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="jdfhkjfkjfdh"
+            android:layout_margin="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvlanguge"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="jdfhkjfkjfdh"
+            android:layout_margin="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvcountry"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="jdfhkjfkjfdh"
+            android:layout_margin="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvcompany"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="jdfhkjfkjfdh"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
+</layout>
