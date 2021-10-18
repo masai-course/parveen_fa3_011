@@ -14,7 +14,7 @@ class paggingSourc:PagingSource<Int,ResponseModelItem>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ResponseModelItem> {
         val pgno=params.key ?:1
-        val responseModel: Call<ResponseModel> =apical.getposts(pgno)
+        val responseModel: ResponseModel =apical.getposts(pgno)
         val datalist= ArrayList<ResponseModelItem>()
 
         return try {

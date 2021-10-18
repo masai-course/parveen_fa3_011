@@ -8,7 +8,7 @@ import com.example.unit5eval1.viewModel.paggingSourc
 class MainRepo {
 
     fun getdata()=Pager(
-        config = PagingConfig(pageSize = 15, maxSize = 25)
+        config = PagingConfig(pageSize = 15, maxSize = 100)
     ,pagingSourceFactory = {paggingSourc()}
     ).liveData
 }

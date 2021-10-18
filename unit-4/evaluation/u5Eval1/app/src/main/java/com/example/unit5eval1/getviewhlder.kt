@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.unit5eval1.data.ResponseModel
+import com.example.unit5eval1.data.ResponseModelItem
 import com.squareup.picasso.Picasso
 
 class getviewhlder(private val view: View):RecyclerView.ViewHolder(view) {
@@ -23,12 +24,12 @@ class getviewhlder(private val view: View):RecyclerView.ViewHolder(view) {
 
     }
 
-    fun setdata(resp:ResponseModel){
+    fun setdata(resp:ResponseModelItem){
         view.apply {
-        tvcountry.text=resp[position].country.name
-            tvdead.text=resp[position].deathday
-            tvbirth.text=resp[position].birthday
-            Picasso.get().load(resp[position].image.medium).into(ivimg)
+        tvcountry.text=resp.country.name
+            tvdead.text=resp.deathday
+            tvbirth.text=resp.birthday
+            Picasso.get().load(resp.image.medium).into(ivimg)
 
         }
     }
