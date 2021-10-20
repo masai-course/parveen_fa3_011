@@ -12,7 +12,7 @@ class paggingSourc:PagingSource<Int,ResponseModel>() {
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ResponseModel> {
         val pgno=params.key ?:1
         val responseModel: ResponseModel =apical.getposts(pgno)
-        val datalist= ArrayList<ResponseModel>()
+        val datalist= responseModel
 
         return try {
             LoadResult.Page(

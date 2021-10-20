@@ -6,16 +6,15 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesdb.databinding.ItemLayoutBinding
 
-class movieviewHolder(val view:View):RecyclerView.ViewHolder(view) {
-
-    var activitybinding:ItemLayoutBinding=DataBindingUtil.setContentView(Activity(),R.layout.item_layout)
+class movieviewHolder(private val itemLayoutBinding: ItemLayoutBinding):RecyclerView.ViewHolder(itemLayoutBinding.root) {
 
 
-    fun setdata(response: ResponseModel){
-        activitybinding.tvname.text=response.title
-        activitybinding.tvlanguge.text=response.original_language
-        activitybinding.tvcountry.text=response.production_countries[position].name
-        activitybinding.tvcompany.text=response.production_companies[position].name
+
+    fun setdata(response:ResponseModel){
+        itemLayoutBinding.tvname.text=response.title
+        itemLayoutBinding.tvlanguge.text=response.original_language
+        itemLayoutBinding.tvcountry.text=response.production_countries[adapterPosition].name
+        itemLayoutBinding.tvcompany.text=response.production_companies[adapterPosition].name
 
     }
 

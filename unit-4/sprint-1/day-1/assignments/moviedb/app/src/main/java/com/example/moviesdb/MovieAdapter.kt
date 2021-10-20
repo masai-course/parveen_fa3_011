@@ -3,11 +3,14 @@ package com.example.moviesdb
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.moviesdb.databinding.ItemLayoutBinding
 
 class MovieAdapter(val response:List<ResponseModel>):RecyclerView.Adapter<movieviewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): movieviewHolder {
-        val view= LayoutInflater.from(parent.context).inflate(R.layout.item_layout,parent,false)
-        return movieviewHolder(view)    }
+        val view= LayoutInflater.from(parent.context)
+        val itemLayoutBinding=ItemLayoutBinding.inflate(view,parent,false)
+        return movieviewHolder(itemLayoutBinding)
+    }
 
     override fun onBindViewHolder(holder: movieviewHolder, position: Int) {
         val model=response[position]
@@ -15,6 +18,6 @@ class MovieAdapter(val response:List<ResponseModel>):RecyclerView.Adapter<moviev
     }
 
     override fun getItemCount(): Int {
-return response.size
+      return response.size
     }
 }
