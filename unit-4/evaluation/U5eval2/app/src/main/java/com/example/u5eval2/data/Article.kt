@@ -1,4 +1,4 @@
-package com.example.u5eval2
+package com.example.u5eval2.data
 
 data class Article(
     val author: String,
