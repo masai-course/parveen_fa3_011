@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-    private fun apicall(){
+   /* private fun apicall(){
         ServiceNetwork.getapi().getposts().subscribeOn(Scheduler.io).observeOn(AndroidSchedulers.mainThread())
             .subscribe(object :Observer<Article>{
                 override fun onSubscribe(d: Disposable) {
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
             })
-    }
+    }*/
 
     private fun setadaptr(){
         newsAdapter= NewsAdapter(resp)
