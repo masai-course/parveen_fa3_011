@@ -6,11 +6,11 @@
     android:layout_height="match_parent"
     android:id="@+id/Relate"
     tools:context=".Views.MainActivity">
+
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/Recucler"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -38,12 +38,7 @@
                 android:id="@+id/etedit1"
                 android:textColor="@color/black"
                 android:textSize="17sp"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/etedit2"
-                android:textColor="@color/black"
-                android:textSize="17sp"/>
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

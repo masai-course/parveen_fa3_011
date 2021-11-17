@@ -47,7 +47,7 @@ class MoneyRepo(val moneyDAO: MoneyDAO) {
     fun createtassk(createtaskRequestModel: CreatetaskRequestModel){
         CoroutineScope(Dispatchers.IO).launch {
             val response=api.createTask(token,createtaskRequestModel)
-            val newtask=Model(response.title,response.discription,response._id,response.__v,response.status)
+            val newtask=Model(response.title,response.discription,0)
             moneyDAO.addtasks(newtask)
         }
     }
@@ -56,7 +56,7 @@ class MoneyRepo(val moneyDAO: MoneyDAO) {
 
         val listofTask=ArrayList<Model>()
         response.forEach {
-            val NewTask=Model(it.title, it.description,it._id,it.__v,it.status)
+            val NewTask=Model(it.title, it.description,0)
             listofTask.add(NewTask)
         }
         moneyDAO.addtask(listofTask)

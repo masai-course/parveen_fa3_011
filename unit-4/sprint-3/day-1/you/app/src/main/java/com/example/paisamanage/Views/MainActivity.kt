@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity(), onItemClicked {
     private val moneylist = mutableListOf<Model>()
     lateinit var moneyDAO: MoneyDAO
     lateinit var datadb: manageRoomDatabase
-    val model = Model("", "", "", 0, 0)
+    val model = Model("", "", 0)
     lateinit var viewmodel: ViewModel
 
 
@@ -73,23 +73,14 @@ class MainActivity : AppCompatActivity(), onItemClicked {
         if (requestCode == 0) {
             if (resultCode == 0) {
                 val Title = data?.getStringExtra("title").toString()
-                val type = data?.getStringExtra("type").toString()
                 val amount = data?.getStringExtra("amount")?.toInt()
-                if (model.type.equals("Income")) {
-                    tvAmount.setTextColor(Color.GREEN)
-                } else {
-                    tvAmount.setTextColor(Color.RED)
-                }
+
                 val currentDate: String =
                     SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
-                var bal = model.balance
 
-                if (type.equals("Income")) {
-                    bal = bal?.plus(amount!!)
-                } else {
-                    bal = bal?.minus(amount!!)
-                }
-                val newtask = Model(Title, type, currentDate, amount, bal)
+
+
+                val newtask = Model(Title, currentDate, amount)
                 CoroutineScope(Dispatchers.IO).launch {
                     moneyDAO.addtasks(newtask)
                 }
@@ -106,27 +97,19 @@ class MainActivity : AppCompatActivity(), onItemClicked {
 
 
             val title = etedit1.text.toString()
-            val type = etedit2.text.toString()
+
             val amt = etedit3.text.toString()
             val currentDate: String =
                 SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
-            if (type.equals("Income")) {
-                tvAmount.setTextColor(Color.GREEN)
-            } else {
-                tvAmount.setTextColor(Color.RED)
-            }
-            model.title = title
-            model.type=type
-            model.amount = Integer.parseInt(amt)
-            var bal = model.balance
 
-            if (type.equals("Income")) {
-                bal = bal!!+ Integer.parseInt(amt)
-            } else {
-                bal = bal!!- Integer.parseInt(amt)
-            }
+            model.title = title
+
+            model.amount = Integer.parseInt(amt)
+
+
+
             model.date = currentDate
-            model.balance=bal
+
             CoroutineScope(Dispatchers.IO).launch {
                 moneyDAO.updatetask(model)
             }

@@ -35,16 +35,7 @@
             android:textColor="@color/black"
             android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/tvtype"
-                android:layout_width="52dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginEnd="5dp"
-                android:text="Type"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+
         </RelativeLayout>
 
         <TextView
@@ -70,16 +61,7 @@
             android:text="Amount"
             android:textColor="@color/black"
             android:textSize="17sp" />
-        <TextView
-            android:id="@+id/tvBalance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="15dp"
-            android:text="Balance"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+
 
 
         <LinearLayout

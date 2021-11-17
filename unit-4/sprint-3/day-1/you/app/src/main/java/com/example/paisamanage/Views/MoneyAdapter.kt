@@ -21,10 +21,10 @@ class MoneyAdapter(val context: Context, val modelList: MutableList<Model>, val 
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         val data = modelList.get(position)
         holder.title.text = data.title
-        holder.type.text=data.type
+
         holder.date.text = data.date
         holder.amount.text=data.amount.toString()
-        holder.balance.text= data.balance.toString()
+
 
         holder.edittv.setOnClickListener {
             listener.onEditClicked(data)
@@ -45,8 +45,7 @@ class MoneyAdapter(val context: Context, val modelList: MutableList<Model>, val 
         var title: TextView
         var date: TextView
         var amount: TextView
-        var type:TextView
-        var balance:TextView
+
 
         var edittv: TextView
         var deletetv: TextView
@@ -57,8 +56,7 @@ class MoneyAdapter(val context: Context, val modelList: MutableList<Model>, val 
             amount=itemView.findViewById(R.id.tvAmount)
             edittv=itemView.findViewById(R.id.editTv)
             deletetv=itemView.findViewById(R.id.deleteTv)
-            type=itemView.findViewById(R.id.tvtype)
-            balance=itemView.findViewById(R.id.tvBalance)
+
         }
     }
 }

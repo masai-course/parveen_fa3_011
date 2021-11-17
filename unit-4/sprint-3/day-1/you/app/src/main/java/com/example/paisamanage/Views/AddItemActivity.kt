@@ -14,7 +14,6 @@ class AddItemActivity : AppCompatActivity() {
         btnsave.setOnClickListener {
             val intent = Intent()
             intent.putExtra("title", ettitle.text.toString())
-            intent.putExtra("type",ettype.text.toString())
             intent.putExtra("amount", etAmount.text.toString())
             setResult(0, intent)
             finish()
