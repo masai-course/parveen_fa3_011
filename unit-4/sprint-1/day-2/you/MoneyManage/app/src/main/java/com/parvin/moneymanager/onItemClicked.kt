@@ -1,4 +1,4 @@
-package com.example.moneymanager
+package com.parvin.moneymanager
 
 interface onItemClicked {
     fun onEditClicked(model:Model)

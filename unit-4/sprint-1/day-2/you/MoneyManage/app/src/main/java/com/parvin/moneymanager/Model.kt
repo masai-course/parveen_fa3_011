@@ -1,4 +1,4 @@
-package com.example.moneymanager
+package com.parvin.moneymanager
 
 class Model {
     var id=0

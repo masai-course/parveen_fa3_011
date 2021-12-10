@@ -1,4 +1,4 @@
-package com.example.moneymanager
+package com.parvin.moneymanager
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

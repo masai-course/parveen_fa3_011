@@ -1,4 +1,4 @@
-package com.example.moneymanager
+package com.parvin.moneymanager
 
 import android.content.ContentValues
 import android.content.Context
