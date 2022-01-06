@@ -9,8 +9,9 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.moviestask.apiresp.ComingSoon
 import com.example.moviestask.R
 import com.example.moviestask.databinding.PagerItemBinding
+import javax.inject.Inject
 
-class pageradapter(private val context: Context, private var pagerlist:ArrayList<ComingSoon>, private val viewPager2: ViewPager2):RecyclerView.Adapter<pagerViewHolder>() {
+class pageradapter (private val context: Context, private var pagerlist:ArrayList<ComingSoon>, private val viewPager2: ViewPager2):RecyclerView.Adapter<pagerViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): pagerViewHolder {

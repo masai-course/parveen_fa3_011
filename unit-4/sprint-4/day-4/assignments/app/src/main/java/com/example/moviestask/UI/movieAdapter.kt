@@ -8,8 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.moviestask.apiresp.NowShowing
 import com.example.moviestask.R
 import com.example.moviestask.databinding.ItemLayoutBinding
+import javax.inject.Inject
 
-class movieAdapter(private val context: Context, private var movielist:ArrayList<NowShowing>):RecyclerView.Adapter<MovieViewHolder>() {
+class movieAdapter (private val context: Context, private var movielist:ArrayList<NowShowing>):RecyclerView.Adapter<MovieViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val inflater=LayoutInflater.from(parent.context)
         val itemLayoutBinding:ItemLayoutBinding = DataBindingUtil.inflate(inflater,R.layout.item_layout, parent , false)

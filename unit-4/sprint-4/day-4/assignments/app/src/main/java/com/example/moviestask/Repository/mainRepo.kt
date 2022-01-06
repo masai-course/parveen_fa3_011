@@ -2,15 +2,17 @@ package com.example.moviestask.Repository
 
 import com.example.moviestask.apiresp.ComingSoon
 import com.example.moviestask.apiresp.NowShowing
+import com.example.moviestask.remote.ApiService
 import com.example.moviestask.remote.network
+import javax.inject.Inject
 
-class mainRepo {
+class mainRepo @Inject constructor(val apiService: ApiService) {
 
     suspend fun getpageraitem():List<ComingSoon>{
-        return network.getapiservice().getresult().coming_soon
+        return apiService.getresult().coming_soon
     }
 
     suspend fun getmovieitem():List<NowShowing>{
-            return network.getapiservice().getresult().now_showing
+            return apiService.getresult().now_showing
     }
 }

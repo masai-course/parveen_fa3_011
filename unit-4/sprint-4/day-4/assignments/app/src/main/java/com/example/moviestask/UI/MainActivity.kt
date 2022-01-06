@@ -3,6 +3,7 @@ package com.example.moviestask.UI
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -18,17 +19,22 @@ import com.example.moviestask.Repository.mainRepo
 import com.example.moviestask.ViewModel.mainViewModel
 import com.example.moviestask.ViewModel.viewmodelFactory
 import com.example.moviestask.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.scopes.ActivityRetainedScoped
+import dagger.hilt.android.scopes.ActivityScoped
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+
 
     lateinit var pageradapter: pageradapter
     var pagerlist=ArrayList<ComingSoon>()
 
     private lateinit var activityMainBinding: ActivityMainBinding
 
-  lateinit var repository:mainRepo
-  lateinit var factory:viewmodelFactory
-  lateinit var viewModel: mainViewModel
+  private val viewModel by viewModels<mainViewModel>()
 
   lateinit var movieAdapter: movieAdapter
   var movielist=ArrayList<NowShowing>()
@@ -39,10 +45,10 @@ class MainActivity : AppCompatActivity() {
 activityMainBinding = DataBindingUtil.setContentView(this,R.layout.activity_main)
 
 
-        repository= mainRepo()
-        factory= viewmodelFactory(repository)
+      //  repository= mainRepo()
+        //factory= viewmodelFactory(repository)
 
-        viewModel=ViewModelProviders.of(this,factory).get(mainViewModel::class.java)
+       // viewModel=ViewModelProviders.of(this, factory).get(mainViewModel::class.java)
         viewModel.getpageritems()
         viewModel.livepagerdata.observe(this, Observer {
             pagerlist=it as ArrayList<ComingSoon>
