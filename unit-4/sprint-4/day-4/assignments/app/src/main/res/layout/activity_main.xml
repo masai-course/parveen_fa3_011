@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1a164c"
+    tools:context=".UI.MainActivity">
+
+    <TextView
+        android:id="@+id/tvmovies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_baseline_dehaze_24"
+        android:drawableEnd="@drawable/ic_baseline_search_24"
+        android:gravity="center"
+        android:padding="25dp"
+        android:text="Movies"
+        android:textColor="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvmovies"
+        android:id="@+id/svscroll1">
+
+
+
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/VPviewpager"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:padding="40dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Now Playing"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:gravity="center"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recycler1"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    
+
+</RelativeLayout>
