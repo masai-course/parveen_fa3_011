@@ -4,16 +4,15 @@ plugins {
     id 'kotlin-android-extensions'
 
 }
-
 android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.parvin.moneymanager"
+        applicationId "com.parvin.dudimoneymanage"
         minSdk 21
         targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        versionCode 5
+        versionName "5.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
