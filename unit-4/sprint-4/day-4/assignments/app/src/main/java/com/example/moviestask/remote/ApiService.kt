@@ -1,6 +1,6 @@
 package com.example.moviestask.remote
 
-import com.example.moviestask.Data.ResponseModel
+import com.example.moviestask.apiresp.ResponseModel
 import retrofit2.http.GET
 
 interface ApiService {

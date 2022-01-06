@@ -1,17 +1,16 @@
 package com.example.moviestask.UI
 
-import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.moviestask.Data.ComingSoon
-import kotlinx.android.synthetic.main.pager_item.view.*
+import com.example.moviestask.apiresp.ComingSoon
+import com.example.moviestask.databinding.PagerItemBinding
 
-class pagerViewHolder(val view: View):RecyclerView.ViewHolder(view) {
+class pagerViewHolder(private val pagerview: PagerItemBinding):RecyclerView.ViewHolder(pagerview.root) {
 
   fun setPagerdata( comingsoon:ComingSoon){
-    view.apply {
-        Glide.with(this).load(comingsoon.posterurl).into(ivpagerimg)
-    }
+
+        Glide.with(pagerview.ivpagerimg).load(comingsoon.posterurl).into(pagerview.ivpagerimg)
+
   }
 
 

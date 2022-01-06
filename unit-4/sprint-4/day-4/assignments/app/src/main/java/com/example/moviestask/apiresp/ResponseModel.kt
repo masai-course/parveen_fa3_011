@@ -1,4 +1,4 @@
-package com.example.moviestask.Data
+package com.example.moviestask.apiresp
 
 data class ResponseModel(
     val coming_soon: List<ComingSoon>,

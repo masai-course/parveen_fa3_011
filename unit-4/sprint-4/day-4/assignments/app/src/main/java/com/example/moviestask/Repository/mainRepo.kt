@@ -1,7 +1,7 @@
 package com.example.moviestask.Repository
 
-import com.example.moviestask.Data.ComingSoon
-import com.example.moviestask.Data.NowShowing
+import com.example.moviestask.apiresp.ComingSoon
+import com.example.moviestask.apiresp.NowShowing
 import com.example.moviestask.remote.network
 
 class mainRepo {

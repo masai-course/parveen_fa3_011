@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+            name="nowShowing"
+            type="com.example.moviestask.apiresp.NowShowing" />
+    </data>
+<androidx.cardview.widget.CardView
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:id="@+id/cvcard"
     app:cardCornerRadius="10dp"
     android:layout_margin="15dp">
@@ -16,8 +25,10 @@
             android:id="@+id/ivimage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:src="@{nowShowing.posterurl}"
             android:scaleType="centerCrop" />
     </RelativeLayout>
 
 
 </androidx.cardview.widget.CardView>
+</layout>

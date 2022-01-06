@@ -3,8 +3,8 @@ package com.example.moviestask.ViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.moviestask.Data.ComingSoon
-import com.example.moviestask.Data.NowShowing
+import com.example.moviestask.apiresp.ComingSoon
+import com.example.moviestask.apiresp.NowShowing
 import com.example.moviestask.Repository.mainRepo
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

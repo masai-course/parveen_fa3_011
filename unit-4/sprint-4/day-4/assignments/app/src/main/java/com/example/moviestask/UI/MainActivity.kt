@@ -3,6 +3,7 @@ package com.example.moviestask.UI
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
@@ -10,18 +11,20 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
-import com.example.moviestask.Data.ComingSoon
-import com.example.moviestask.Data.NowShowing
+import com.example.moviestask.apiresp.ComingSoon
+import com.example.moviestask.apiresp.NowShowing
 import com.example.moviestask.R
 import com.example.moviestask.Repository.mainRepo
 import com.example.moviestask.ViewModel.mainViewModel
 import com.example.moviestask.ViewModel.viewmodelFactory
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.moviestask.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var pageradapter: pageradapter
     var pagerlist=ArrayList<ComingSoon>()
+
+    private lateinit var activityMainBinding: ActivityMainBinding
 
   lateinit var repository:mainRepo
   lateinit var factory:viewmodelFactory
@@ -33,8 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
+activityMainBinding = DataBindingUtil.setContentView(this,R.layout.activity_main)
 
 
         repository= mainRepo()
@@ -46,10 +48,12 @@ class MainActivity : AppCompatActivity() {
             pagerlist=it as ArrayList<ComingSoon>
             setpageradapter()
         })
+          activityMainBinding.apply {
+              VPviewpager.offscreenPageLimit = 3
+              VPviewpager.clipChildren = false
+              VPviewpager.clipToPadding = false
 
-        VPviewpager.offscreenPageLimit=3
-        VPviewpager.clipChildren=false
-        VPviewpager.clipToPadding=false
+          }
 
         val transformer=CompositePageTransformer()
         transformer.addTransformer(MarginPageTransformer(40))
@@ -62,7 +66,7 @@ class MainActivity : AppCompatActivity() {
 
         })
 
-        VPviewpager.setPageTransformer(transformer)
+        activityMainBinding.VPviewpager.setPageTransformer(transformer)
 
         viewModel.getMovieData()
         viewModel.livemovieData.observe(this, Observer {
@@ -76,7 +80,7 @@ class MainActivity : AppCompatActivity() {
 
     }
     fun setpageradapter(){
-        val pager2=VPviewpager
+        val pager2=activityMainBinding.VPviewpager
         pageradapter= pageradapter(this,pagerlist,pager2)
         pager2.adapter=pageradapter
         val LinearLayoutManager=LinearLayoutManager(this)
@@ -86,7 +90,7 @@ class MainActivity : AppCompatActivity() {
     fun setrecyclerview(){
         movieAdapter= movieAdapter(this,movielist)
         val gridLayoutManager=GridLayoutManager(this,3)
-        recycler1.adapter=movieAdapter
-        recycler1.layoutManager=gridLayoutManager
+        activityMainBinding.recycler1.adapter = movieAdapter
+        activityMainBinding.recycler1.layoutManager = gridLayoutManager
     }
 }
