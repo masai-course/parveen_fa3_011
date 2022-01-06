@@ -35,8 +35,11 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/VPviewpager"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:padding="40dp" />
+                android:layout_height="200dp"
+                android:paddingTop="25dp"
+                android:paddingBottom="25dp"
+                android:paddingRight="70dp"
+                android:paddingLeft="70dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -44,6 +47,7 @@
                 android:text="Now Playing"
                 android:textColor="@color/white"
                 android:textSize="18sp"
+                android:padding="25dp"
                 android:gravity="center"/>
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
