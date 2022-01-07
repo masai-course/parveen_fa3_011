@@ -1,4 +1,4 @@
-package com.example.moviestask.UI
+package com.example.moviestask.ui
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

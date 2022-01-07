@@ -7,6 +7,7 @@
         <variable
             name="nowShowing"
             type="com.example.moviestask.apiresp.NowShowing" />
+
     </data>
 <androidx.cardview.widget.CardView
     android:layout_width="match_parent"

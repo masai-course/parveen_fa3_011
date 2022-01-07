@@ -5,6 +5,7 @@
         <variable
             name="commigSoon"
             type="com.example.moviestask.apiresp.ComingSoon" />
+
     </data>
 
 <LinearLayout

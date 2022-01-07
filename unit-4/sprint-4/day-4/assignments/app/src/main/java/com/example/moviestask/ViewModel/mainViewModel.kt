@@ -19,7 +19,7 @@ class mainViewModel @Inject constructor(val repo: mainRepo):ViewModel() {
     var livepagerdata:LiveData<List<ComingSoon>> = pagerData
 
 
-
+  // posting data to mutable livedata
     fun getpageritems(){
         CoroutineScope(Dispatchers.IO).launch {
 
