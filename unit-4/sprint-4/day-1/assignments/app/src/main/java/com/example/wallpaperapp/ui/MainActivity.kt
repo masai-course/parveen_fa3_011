@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity(), ClickListener {
 
 
         viewmodel.getimages()
+        //livedata observer
         viewmodel.liveimagedata.observe(this, Observer {
             imageList= it as ArrayList<Photo>
             setrecycler()
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity(), ClickListener {
 
 
     }
+    // set adapter and layoutmanager to recycler view
     fun setrecycler(){
         imageAdapter= ImageAdapter(this,imageList, this)
         var gridLayoutManager = GridLayoutManager(this,2)

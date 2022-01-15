@@ -19,6 +19,8 @@ class mainviewModel @Inject constructor(private val repo:MainRepo):ViewModel() {
     private var imageList = MutableLiveData<List<Photo>>()
     var liveimagedata:LiveData<List<Photo>> = imageList
 
+
+    //posting values to mutable livedata
     fun getimages(){
         CoroutineScope(Dispatchers.IO).launch {
             val apidata=repo.getimageitem()
