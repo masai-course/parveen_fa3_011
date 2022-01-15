@@ -22,9 +22,8 @@ class mainviewModel @Inject constructor(private val repo:MainRepo):ViewModel() {
     fun getimages(){
         CoroutineScope(Dispatchers.IO).launch {
             val apidata=repo.getimageitem()
-            Log.d("dudi", "getimages resp")
             imageList.postValue(apidata)
-            Log.d("dudi", "getimagesafter")
+
         }
     }
 

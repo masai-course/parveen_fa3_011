@@ -43,8 +43,10 @@ class MainActivity : AppCompatActivity(), ClickListener {
         imageAdapter= ImageAdapter(this,imageList, this)
         var gridLayoutManager = GridLayoutManager(this,2)
 
-            activityMainBinding.recuclerview.adapter=imageAdapter
-        activityMainBinding.recuclerview.layoutManager=gridLayoutManager
+            activityMainBinding.recuclerview.apply {
+                adapter=imageAdapter
+                layoutManager=gridLayoutManager
+            }
 
 
     }
