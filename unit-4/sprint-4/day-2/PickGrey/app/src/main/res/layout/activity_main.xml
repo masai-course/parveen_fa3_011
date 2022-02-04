@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Score:"
+       android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textSize="17sp"
+        android:textColor="@color/black"
+        android:id="@+id/tvscore"
+        />
+
+    <TextView
+        android:id="@+id/tvscorenet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/tvscore"
+        android:text=" 0"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_below="@+id/tvscore"
+        android:layout_marginTop="25dp"
+        android:id="@+id/lin1">
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:layout_below="@+id/tvscore"
+        android:id="@+id/view0"
+        android:layout_weight="1"
+        />
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_200"
+        android:id="@+id/view1"
+        android:layout_weight="1"
+        />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_below="@+id/lin1"
+        android:id="@+id/lin2">
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#f83b18"
+            android:id="@+id/view2"
+            android:layout_weight="1"
+            />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#f6f93b"
+            android:id="@+id/view3"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cvcard"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Game Over"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/tvover"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Game Over"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"
+                android:layout_below="@+id/tvover"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/tvtotalscore"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:id="@+id/btnrestart"
+                android:text="RESTART"
+                android:layout_below="@+id/tvtotalscore"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>
+</layout>

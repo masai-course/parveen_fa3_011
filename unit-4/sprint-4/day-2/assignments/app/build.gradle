@@ -48,7 +48,7 @@ dependencies {
 
     implementation 'androidx.activity:activity-ktx:1.4.0'
 
-    implementation 'me.relex:circleindicator:2.1.4'
+    implementation 'me.relex:circleindicator:2.1.6'
 
     //Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"

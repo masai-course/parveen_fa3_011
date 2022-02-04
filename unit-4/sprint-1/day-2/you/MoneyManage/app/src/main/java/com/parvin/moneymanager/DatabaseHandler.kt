@@ -17,7 +17,7 @@ class DatabaseHandler(val context: Context): SQLiteOpenHelper(context, DB_NAME,n
         val DATE="date"
         val AMOUNT="amount"
     }
-    override fun onCreate(db: SQLiteDatabase?) {
+   override fun onCreate(db: SQLiteDatabase?) {
         val TABLE_QUERY="CREATE TABLE "+
                 "$TABLE_NAME("+
                 "$ID INTEGER PRIMARY KEY,"+

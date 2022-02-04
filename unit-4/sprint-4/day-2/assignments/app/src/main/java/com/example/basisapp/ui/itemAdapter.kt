@@ -12,6 +12,9 @@ import com.example.basisapp.databinding.PagerLayoutBinding
 import java.util.zip.Inflater
 
 class itemAdapter(private val context: Context, private var itemlist: ArrayList<Data>, private val viewPager2: ViewPager2) :RecyclerView.Adapter<itemViewHolder>() {
+
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): itemViewHolder {
         val inflater =LayoutInflater.from(parent.context)
         val layoutbinder: PagerLayoutBinding = DataBindingUtil.inflate(inflater, R.layout.pager_layout, parent, false)
