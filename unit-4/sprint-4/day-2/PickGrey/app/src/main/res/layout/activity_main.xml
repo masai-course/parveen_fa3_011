@@ -40,7 +40,7 @@
     <View
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/black"
+        android:background="#fb2112"
         android:layout_below="@+id/tvscore"
         android:id="@+id/view0"
         android:layout_weight="1"
@@ -48,7 +48,7 @@
     <View
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/purple_200"
+        android:background="#3235ac"
         android:id="@+id/view1"
         android:layout_weight="1"
         />
@@ -63,14 +63,14 @@
         <View
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#f83b18"
+            android:background="#f6f93b"
             android:id="@+id/view2"
             android:layout_weight="1"
             />
         <View
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#f6f93b"
+            android:background="#02991b"
             android:id="@+id/view3"
             android:layout_weight="1"
             />
