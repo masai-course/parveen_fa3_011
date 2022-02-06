@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "440070844994",
+    "project_id": "vidootask",
+    "storage_bucket": "vidootask.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440070844994:android:fe05abe4fd9c412b55b3db",
+        "android_client_info": {
+          "package_name": "com.example.taskapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "440070844994-t57jk04246v97gh5ljbmvfv3bm82r4gc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADYQakVg2bzajoUbn26BYluOx9eWDOJJM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "440070844994-t57jk04246v97gh5ljbmvfv3bm82r4gc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
